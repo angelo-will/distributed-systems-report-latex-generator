@@ -261,6 +261,70 @@ Component diagrams are welcome here
 
 \subsection{Modelling}\label{modelling}
 
+The domain entities are:
+
+\begin{itemize}
+    \item Player (Opponents)
+    
+    \item Cards.
+
+    \item Hands.
+
+    \item Deck.
+
+    \item Discard pile.
+\end{itemize}
+
+Each game is played by up to 5 players, who compete among each other to win.
+
+Cards from a standard poker deck, from 1 to King, including the aces.
+%
+In addition, face cards are associated with special powers that the player can use.
+
+At the start of the game, each player receives four cards, which form their hand, but can only view the value of the first two.
+%
+The rest of the cards are then put in the deck.
+
+After each turn, the player must discard a card and these are collected in the discard pile.
+
+\subsubsection{Events}
+
+Player:
+
+\begin{itemize}
+    \item Create a game
+
+    \item Join a game
+
+    \item Leave a game
+
+    \item Draw a card
+        \begin{itemize}
+            \item from the deck
+            \item from the discard pile
+        \end{itemize}
+
+    \item Use the power of a special card
+        \begin{itemize}
+          \item View one of ypur own cards
+          \item View a card of another player
+          \item Exachange a card with another player 
+        \end{itemize}
+
+    \item Exchange one of your cards with the one drawn
+
+    \item Discard a card
+
+    \item End Turn
+        \begin{itemize}
+            \item Calling cabo
+        \end{itemize}
+      
+    \item End Game
+    
+\end{itemize}
+
+
 \begin{itemize}
   \item which \textbf{domain entities} are there?
 
