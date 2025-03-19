@@ -187,6 +187,16 @@ be present in the end
 
 \subsection{Architecture}\label{architecture}
 
+The project follows the MVC patterns and the Actor model.
+
+Moreover, the game system is based on Peer-to-peer (P2P) architecture, meaning that each active entity communicates with each other without the need for an intermediary.
+
+However, the lobby component of the system follow a client-server architecture, meaning that the lobby is a unique entity contacted by the player entities to receive information about the games currently active.
+
+This solution was chosen to create a simple way to connect the players to each other and create an indefinite number of games without worrying about the maintenance of a central server.
+
+% solione server-based scartata per costi anche se più sicura per cheat
+
 \begin{itemize}
   \item Which architectural style?
 
@@ -196,6 +206,28 @@ be present in the end
 \end{itemize}
 
 \subsection{Infrastructure}\label{infrastructure}
+
+Each player is a client.
+
+A single server for lobby purposes (help players to find each others.)
+% Ragionare sulla possibilità di averne altri per eviatare Single poit of failure e load balancing.
+
+A local database for each client that keeps track of the games played.
+
+Each client has a graphical interface, built as a web interface.
+%
+Through this interface, each player is able to decide which action to take during his turn.
+
+A web socket is used to pass messages between the interface and the client.
+
+Being a P2P system each client can be located everywhere, as long as an internet connection is provided.
+% DA VERIFICARE
+
+When a player create a new game he becomes temporarily the host for that game.
+%
+At this moment he can share a link to other players, using the lobby or sending directly to them, to let them access his game.
+%
+Once the game starts, a true P2P network is established where all the players are equals and can do the same things.
 
 \begin{itemize}
   \item are there \emph{infrastructural components} that need to be
