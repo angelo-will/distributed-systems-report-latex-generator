@@ -113,6 +113,30 @@ Here you should explain:
 
 \section{Requirements}\label{requirements}
 
+\subsection{Functional}
+
+\begin{enumerate}
+    \item Crete a game and share it using the lobby or a personal link.
+    \item Join a game using an invitation link.
+    \item Join a game from the lobby list.
+    \item Fault tolerance: if a player is disconnected, his turn is skipped while the game continues. The player should then be able to re-join the game.
+    \item Each player should be able to see the results of the games played in the current session.
+    \item Play an entire game to its end.  
+\end{enumerate}
+
+\subsection{Non-functional}
+
+\begin{enumerate}
+    \item Have a low latency during each game.
+    \item A nice graphical interface.
+\end{enumerate}
+
+\subsection{Implementation}
+
+\begin{enumerate}
+    \item Implemented using Scala and Akka.
+\end{enumerate}
+
 \begin{itemize}
   \item The requirements must explain \textbf{what} (not how) the software
   being produced should do.
